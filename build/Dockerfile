@@ -1,6 +1,6 @@
 FROM debian:stretch-slim
 
-ENV ENV DNS64_PREFIX= \
+ENV DNS64_PREFIX= \
     DNS64_IP6_LISTEN= \
     DNS64_LISTEN=
 
