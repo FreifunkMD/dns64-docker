@@ -9,6 +9,7 @@ COPY entrypoint.sh /entrypoint.sh
 RUN set -ex \
 	&& apk --no-cache add \
         bind \
+    && mkdir /var/cache/bind \
     && chmod +x /entrypoint.sh
 
 EXPOSE 53/udp 53/tcp

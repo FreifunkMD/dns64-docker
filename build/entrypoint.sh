@@ -13,7 +13,12 @@ options {
 };
 EOF
 
-cat /etc/bind/named.conf.options
+cat > /etc/bind/named.conf <<EOF
+include "/etc/bind/named.conf.options";
+#include "/etc/bind/named.conf.local";
+#include "/etc/bind/named.conf.default-zones";
+EOF
+
 if [ "$1" = 'named' ]; then
   echo "Starting named..."
   exec $(which named) -g
